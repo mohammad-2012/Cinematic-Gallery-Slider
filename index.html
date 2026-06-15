@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinematic Gallery Slider</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <h1 class="header-title">
+          <i class="fas fa-images"></i> Gallery Slider
+        </h1>
+        <span class="header-badge">✦ 2026 ✦</span>
+      </div>
+    </header>
+
+    <main class="main-wrapper">
+      <div class="slider-container">
+        <div class="slider-track">
+          <img src="./assets/image-1.jpg" alt="Mountain" class="slider-img" />
+          <img src="/assets/image-2.jpg" alt="City" class="slider-img" />
+          <img src="/assets/image-3.jpg" alt="Nature" class="slider-img" />
+        </div>
+
+        <button class="btn btn-prev" id="prev-btn" aria-label="Previous">
+          <i class="fas fa-chevron-circle-left"></i>
+        </button>
+        <button class="btn btn-next" id="next-btn" aria-label="Next">
+          <i class="fas fa-chevron-circle-right"></i>
+        </button>
+
+        <div class="slider-indicators" id="indicators"></div>
+      </div>
+
+      <div class="slider-info">
+        <span id="slide-counter">1 / 5</span>
+        <span class="divider">|</span>
+        <span id="slide-title">Mountain</span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p><i class="fas fa-camera"></i> Auto‑play · 5s</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

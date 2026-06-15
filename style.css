@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0f0f1a;
+  color: #f0f0f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 1.5rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(36, 196, 211, 0.12);
+  backdrop-filter: blur(6px);
+  padding: 0.8rem 2rem;
+  border-radius: 60px;
+  border: 1px solid rgba(36, 196, 211, 0.2);
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #24c4d3, #7bdfe8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.header-title i {
+  -webkit-text-fill-color: #24c4d3;
+  font-size: 1.6rem;
+}
+
+.header-badge {
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #b0b8c5;
+  font-weight: 300;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(36, 196, 211, 0.15);
+  background: #1a1a2e;
+}
+
+@media (max-width: 650px) {
+  .slider-container {
+    height: 340px;
+    border-radius: 20px;
+  }
+  .header-title {
+    font-size: 1.3rem;
+  }
+  .header-badge {
+    display: none;
+  }
+}
+
+.slider-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.slider-img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.96) saturate(1.05);
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10, 10, 20, 0.5);
+  backdrop-filter: blur(6px);
+  border: none;
+  color: #fff;
+  font-size: 2.6rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.25s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn i {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.btn-prev {
+  left: 18px;
+}
+
+.btn-next {
+  right: 18px;
+}
+
+.btn:hover {
+  background: rgba(36, 196, 211, 0.35);
+  border-color: #24c4d3;
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 0 20px rgba(36, 196, 211, 0.3);
+}
+
+.btn:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+@media (max-width: 500px) {
+  .btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+  .btn-prev {
+    left: 8px;
+  }
+  .btn-next {
+    right: 8px;
+  }
+}
+
+.slider-indicators {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  padding: 0.4rem 1rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.indicator-dot.active {
+  background: #24c4d3;
+  box-shadow: 0 0 12px #24c4d3;
+  width: 24px;
+  border-radius: 12px;
+}
+
+.indicator-dot:hover {
+  background: rgba(36, 196, 211, 0.6);
+}
+
+.slider-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: #a8b2c9;
+  letter-spacing: 0.4px;
+}
+
+.slider-info .divider {
+  opacity: 0.3;
+}
+
+#slide-counter {
+  font-weight: 500;
+  color: #e0e6f0;
+}
+
+#slide-title {
+  font-weight: 300;
+  color: #c0c9dd;
+  min-width: 80px;
+  text-align: center;
+}
+
+.footer {
+  margin-top: 1.8rem;
+  color: #3d4558;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.footer i {
+  color: #24c4d3;
+  margin-right: 6px;
+}
